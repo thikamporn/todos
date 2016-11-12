@@ -5,45 +5,44 @@
       <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
   </head>
 
+  <p><center><br><font size = "72"><font face = "Castellar">TODO</font></font></br></center></p>
 
   <body>
+  <div ng-controller="AddData">
+    <form>
+        <div
+        <div class="form-group">
+          <p><center><label for="Title"><font face = "Book antiqua">Search</font></label></center></p>
+          <center><input type="text" class="form-control" id="Title" style="width:500px;" placeholder="what do you mean?" ng-model="title" ><center>
+        </div>
+        <center><button type="submit" class="btn btn-info " ng-click="add()" ><font face = "Book antiqua">Add contact</font></button></center>
+    </form>
+  </div>
+
     <div class="container">
       <div ng-controller="ListData">
         <table class="table table-hover">
-          <thead>
-            <tr>
-              <th>     </th>
-              <th>Title</th>
-              <th>Done</th>
-            </tr>
-          </thead>
 
+            <thead>
+              <tr>
+                <th>     </th>
+                <th><font face = "Book antiqua">Title</font></th>
+                <th><font face = "Book antiqua">Done</font></th>
+              </tr>
+            </thead>
 
-          <tbody>
-              <tr ng-repeat="nameType in todo" >
-                 <td><input type="checkbox" ng-model="cb" ng-true-value="'Complete'"ng-false-value="' '" ></td>
-                 <td>{{ nameType.name }}</td>
-                 <td>{{ cb }}</td>
+            <tbody>
+              <tr ng-repeat="tType in todo" >
+                 <td><input type="checkbox" ng-model="tType.done" ng-true-value="'Complete'" ng-false-value="' '" ></td>
+                 <td>{{ tType.title }}</td>
+                 <td>{{ tType.done }}</td>
                </tr>
            </tbody>
+
         </table>
       </div>
-    <div>
-
-
-
-      <div ng-controller="AddData">
-      <form>
-          <div
-          <div class="form-group">
-            <label for="Title">Title</label>
-            <input type="text" class="form-control" id="Title" placeholder="Title" ng-model="name">
-          </div>
-
-          <button type="submit" class="btn btn-default " ng-click="add()" >Add contact</button>
-
-      </form>
     </div>
+
 
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
