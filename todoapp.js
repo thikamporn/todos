@@ -3,15 +3,19 @@ angular.module('todoApp',[])
       {
             var data = this
 
-                data.todo = []
+                data.todo =
+                [
+                  {title: ' ' },
+                  { done: true }
+                ];
 
                 data.list = function()
                   {
                       return data.todo
                   }
-                data.add = function(nameType)
+                data.add = function(todo)
                   {
-                      data.todo.push(nameType)
+                      data.todo.push(todo)
                   }
 
       })
@@ -24,21 +28,17 @@ angular.module('todoApp',[])
         {
               $scope.add = function ()
                   {
-                     var nameType =
+                     var tType =
                      {
-                        name: $scope.name
+                        title: $scope.title,
+                        done: $scope.done
                      }
-                       todoService.add(nameType)
+                       todoService.add(tType)
                        resetData()
                   }
             function resetData()
                   {
-                      $scope.name = ' '
+                      $scope.title = ' '
+                      $scope.done = 'fale'
                   }
         })
-  .controller('C1', function($scope)
-      {
-          $scope.roles =
-          {[ cb : 'Complete']}
-
-      })
