@@ -5,8 +5,8 @@ angular.module('todoApp',[])
 
                 data.todo =
                 [
-                  {title: ' ' },
-                  { done: true }
+                  {title: 'Chalita',done: true },
+                  { title: 'Thikamporn',done: false}
                 ];
 
                 data.list = function()
@@ -17,7 +17,6 @@ angular.module('todoApp',[])
                   {
                       data.todo.push(todo)
                   }
-
       })
 
   .controller('ListData', function ($scope,todoService)
@@ -26,6 +25,7 @@ angular.module('todoApp',[])
        })
   .controller('AddData', function ($scope,todoService)
         {
+            $scope.title = ' '
               $scope.add = function ()
                   {
                      var tType =
@@ -33,12 +33,15 @@ angular.module('todoApp',[])
                         title: $scope.title,
                         done: $scope.done
                      }
+                     if(tType.title !== ' ')
+                     {
                        todoService.add(tType)
                        resetData()
+                     }
                   }
             function resetData()
                   {
                       $scope.title = ' '
-                      $scope.done = 'fale'
+                      $scope.done = ' '
                   }
         })
