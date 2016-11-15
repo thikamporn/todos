@@ -13,7 +13,7 @@
         <div
         <div class="form-group">
           <p><center><label for="Title"><font face = "Book antiqua">Search</font></label></center></p>
-          <center><input type="text" class="form-control" id="Title" style="width:500px;" placeholder="what do you mean?" ng-model="title" ><center>
+          <center><input type="text" class="form-control" id="Title" style="width:500px;" ng-model="title" ><center>
         </div>
         <center><button type="submit" class="btn btn-info " ng-click="add()" ><font face = "Book antiqua">Add contact</font></button></center>
     </form>
@@ -33,9 +33,9 @@
 
             <tbody>
               <tr ng-repeat="tType in todo" >
-                 <td><input type="checkbox" ng-model="tType.done" ng-true-value="'Complete'" ng-false-value="' '" ></td>
-                 <td>{{ tType.title }}</td>
-                 <td>{{ tType.done }}</td>
+                <td><input type="checkbox" ng-model="tType.done" ng-checked="tType.done === true" >
+                   <td>{{ tType.title }}</td>
+                   <td><div ng-if="tType.done">Complete !</div></td>
                </tr>
            </tbody>
 
