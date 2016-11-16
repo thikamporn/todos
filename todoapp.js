@@ -17,6 +17,17 @@ angular.module('todoApp',[])
                   {
                       data.todo.push(todo)
                   }
+                data.update = function(ddone)
+                  {
+                      if(ddone.done === true)
+                      {
+                        ddone.done = false
+                      }
+                      else
+                      {
+                        ddone.done = true
+                      }
+                  }
       })
 
   .controller('ListData', function ($scope,todoService)
@@ -39,9 +50,13 @@ angular.module('todoApp',[])
                        resetData()
                      }
                   }
+              $scope.update = function(ddone)
+                  {
+                      todoService.add(ddone)
+                  }
             function resetData()
                   {
                       $scope.title = ' '
-                      $scope.done = ' '
+                      $scope.done = false
                   }
         })
