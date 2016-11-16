@@ -33,6 +33,10 @@ angular.module('todoApp',[])
   .controller('ListData', function ($scope,todoService)
        {
         $scope.todo = todoService.list()
+        $scope.update = function(ddone)
+            {
+                todoService.update(ddone)
+            }
        })
   .controller('AddData', function ($scope,todoService)
         {
@@ -49,10 +53,6 @@ angular.module('todoApp',[])
                        todoService.add(tType)
                        resetData()
                      }
-                  }
-              $scope.update = function(ddone)
-                  {
-                      todoService.add(ddone)
                   }
             function resetData()
                   {
