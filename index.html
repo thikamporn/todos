@@ -44,7 +44,7 @@ background: url(pastel_bg_by_moriahcaitlin-d8m0yju.jpg) no-repeat center center 
 
             <tbody>
               <tr ng-repeat="tType in todo" >
-                <td><input type="checkbox" ng-model="tType.done" ng-checked="tType.done === true" >
+                   <td><input type="checkbox" ng-model="tType.done" ng-checked="tType.done === true" ng-click="update(tType)" >
                    <td>{{ tType.title }}</td>
                    <td><div ng-if="tType.done">Complete !</div></td>
                </tr>
