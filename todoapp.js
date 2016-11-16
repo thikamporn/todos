@@ -33,10 +33,7 @@ angular.module('todoApp',[])
   .controller('ListData', function ($scope,todoService)
        {
         $scope.todo = todoService.list()
-        $scope.update = function(ddone)
-            {
-                todoService.update(ddone)
-            }
+
        })
   .controller('AddData', function ($scope,todoService)
         {
@@ -59,4 +56,11 @@ angular.module('todoApp',[])
                       $scope.title = ' '
                       $scope.done = false
                   }
+        })
+    .controller('UpdateDone',function($scope,todoService)
+        {
+          $scope.update = function (ddone)
+          {
+            todoService.update(ddone)
+          }
         })
